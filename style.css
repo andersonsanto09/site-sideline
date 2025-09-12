@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0px 10px 15px;
-    gap: 36px; /* Adiciona espaçamento entre os itens */
+    gap: 36px;
 }
 
 .logo {
@@ -36,6 +36,12 @@ body {
 .logo img {
     height: 50px; /* Ajuste a altura conforme necessário */
     width: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 .nav ul {
@@ -61,7 +67,9 @@ body {
 }
 
 .btn-contato {
-    margin-left: 24px;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center;
     background: #ac2727;
     color: #fff;
     padding: 10px 24px;
@@ -423,4 +431,216 @@ width: 30px;
     margin-bottom: 20px;
     font-size: 0.95rem;
     color: #ac2727;
+}
+
+
+/* Responsividade geral */
+@media (max-width: 900px) {
+    .cabecalho-container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 5px 15px;
+    }
+    .nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+    .btn-contato {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .logo img {
+        height: 40px;
+    }
+    .sobre-container {
+        flex-direction: column;
+        padding: 30px 10px;
+        gap: 24px;
+        text-align: center;
+    }
+    .sobre-imagem {
+        justify-content: center;
+    }
+    .img-principal img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .servicos-title-container img,
+    .clinic-title-container img {
+        width: 48px;
+        height: 32px;
+    }
+    .services-list-grid {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 24px;
+    }
+    .services-col {
+        max-width: 100%;
+        min-width: 0;
+        gap: 24px;
+    }
+    .clinic-section {
+        padding: 0 10px;
+    }
+    .clinic-image-center img {
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+    .clinic-features-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 100%;
+    }
+    .clinic-feature {
+        min-width: 0;
+        justify-content: center;
+        padding: 12px 8px;
+    }
+    .footer-content-row {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        max-width: 100%;
+    }
+    .footer-links {
+        border-left: none;
+        border-top: 3px solid #ac2727;
+        padding-left: 0;
+        padding-top: 16px;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-contact,
+    .footer-social {
+        text-align: center;
+        width: 100%;
+    }
+    .footer-social ul {
+        justify-content: center;
+        margin: 0;
+    }
+    .footer-bottom {
+        font-size: 0.9rem;
+        margin-top: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 500px) {
+    body {
+        padding: 10px 2px 10px;
+        font-size: 15px;
+    }
+    .section-title,
+    .clinic-title,
+    .servicos-title-container h2,
+    .clinic-title-container h2 {
+        font-size: 1.2rem;
+    }
+    .service-item h3 {
+        font-size: 1rem;
+    }
+    .feature-icon,
+    .servicos-icon,
+    .clinic-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Ícone do menu mobile */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 10px;
+    z-index: 1001;
+}
+.mobile-menu-icon span {
+    height: 4px;
+    width: 100%;
+    background: #ac2727;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Menu mobile */
+@media (max-width: 900px) {
+    .mobile-menu-icon {
+        display: flex;
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: #181818;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 60px 30px 30px 30px;
+        transition: left 0.3s;
+        z-index: 1000;
+        box-shadow: 2px 0 20px #ac272733;
+    }
+    .nav.active {
+        left: 0;
+    }
+    .nav ul {
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+    }
+    .nav a {
+        font-size: 1.3rem;
+        color: #fff;
+        padding: 10px 0;
+        border-bottom: 1px solid #ac2727;
+        width: 100%;
+        display: block;
+    }
+    .btn-contato {
+        margin: 24px 0 0 0;
+        width: 100%;
+    }
+    main > section {
+        margin: 48px 0 48px 0;
+        padding: 0 10px;
+    }
+    .seleçao-principal {
+        margin-bottom: 0;
+    }
+    .seleção-serviços {
+        margin-top: 48px;
+    }
+}
+
+/* Responsividade para o texto da seção Sobre */
+@media (max-width: 900px) {
+    .texto-sobre p {
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 95vw;
+        margin: 0 auto;
+    }
+}
+
+/* Responsividade para o texto da seção Sobre em telas pequenas */
+@media (max-width: 500px) {
+    .texto-sobre p {
+        font-size: 14px;
+        line-height: 1.4;
+        max-width: 98vw;
+        margin: 0 auto;
+    }
 }
